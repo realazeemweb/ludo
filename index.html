@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ludo Board</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#f7f3f3;
+    font-family:Arial, sans-serif;
+}
+
+.board{
+    width:600px;
+    height:600px;
+    display:grid;
+    grid-template-columns:repeat(15, 1fr);
+    grid-template-rows:repeat(15, 1fr);
+    border:5px rgb(97, 28, 28);
+}
+
+/* General cell */
+.cell{
+    border:1px solid #ddd;
+}
+
+/* Home Areas */
+.red-home{
+    grid-area:1 / 1 / 7 / 7;
+    background:red;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.green-home{
+    grid-area:1 / 10 / 7 / 16;
+    background:green;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.blue-home{
+    grid-area:10 / 1 / 16 / 7;
+    background:#2196f3;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.yellow-home{
+    grid-area:10 / 10 / 16 / 16;
+    background:yellow;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Inner white box */
+.home-inner{
+    width:70%;
+    height:70%;
+    background:white;
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    grid-template-rows:repeat(2, 1fr);
+    gap:20px;
+    justify-items:center;
+    align-items:center;
+}
+
+/* Tokens */
+.token{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+}
+
+.red{ background:red; }
+.green{ background:green; }
+.blue{ background:#2196f3; }
+.yellow{ background:gold; }
+
+/* Center triangle */
+.center{
+    grid-area:7 / 7 / 10 / 10;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-template-rows:repeat(3,1fr);
+}
+
+.center div:nth-child(1){
+    background:red;
+    grid-area:1 / 1 / 4 / 2;
+}
+.center div:nth-child(2){
+    background:green;
+    grid-area:1 / 2 / 2 / 4;
+}
+.center div:nth-child(3){
+    background:yellow;
+    grid-area:2 / 3 / 4 / 4;
+}
+.center div:nth-child(4){
+    background:#2196f3;
+    grid-area:3 / 1 / 4 / 3;
+}
+
+</style>
+</head>
+<body>
+
+<div class="board">
+
+    <!-- Homes -->
+    <div class="red-home">
+        <div class="home-inner">
+            <div class="token red"></div>
+            <div class="token red"></div>
+            <div class="token red"></div>
+            <div class="token red"></div>
+        </div>
+    </div>
+
+    <div class="green-home">
+        <div class="home-inner">
+            <div class="token green"></div>
+            <div class="token green"></div>
+            <div class="token green"></div>
+            <div class="token green"></div>
+        </div>
+    </div>
+
+    <div class="blue-home">
+        <div class="home-inner">
+            <div class="token blue"></div>
+            <div class="token blue"></div>
+            <div class="token blue"></div>
+            <div class="token blue"></div>
+        </div>
+    </div>
+
+    <div class="yellow-home">
+        <div class="home-inner">
+            <div class="token yellow"></div>
+            <div class="token yellow"></div>
+            <div class="token yellow"></div>
+            <div class="token yellow"></div>
+        </div>
+    </div>
+    <!-- Center -->
+    <div class="center">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+</div>
+
+</body>
+</html>
